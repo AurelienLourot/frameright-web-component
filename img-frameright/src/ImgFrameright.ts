@@ -66,6 +66,7 @@ export class ImgFrameright extends LitElement {
     //   `<div>` element rather than the `<img>` one.
     return html`
       <div class="root" style=${this._style ?? nothing}>
+        <slot name="burger">hello</slot>
         <img
           alt=${this._alt ?? nothing}
           crossorigin=${this._crossorigin ?? nothing}

@@ -5,7 +5,7 @@
     <style>
       body {
         background: #fafafa;
-        min-height: 1500px;
+        min-height: 2000px;
       }
 
       .demo {
@@ -23,6 +23,11 @@
         width: 400px;
         height: 200px;
       }
+
+      .twic {
+        width: 400px;
+        height: 600px;
+      }
     </style>
   </head>
   <body>
@@ -33,7 +38,6 @@
         title="Hello my deer"
         alt="Deer being cute in the nature"
         id="deer"
-        debug
         image-regions='[{
         "id": "oneanimal",
         "names": ["One animal"],
@@ -67,7 +71,6 @@
               assets/iptc/IPTC-PhotometadataRef-Std2021.1-768x384.jpg 768w"
         sizes="(max-width: 2000px) 100vw, 2000px"
         id="iptc"
-        debug
         image-regions='[{
         "id": "persltr2",
         "names": ["Listener 1"],
@@ -81,6 +84,26 @@
       >
       </img-frameright>
     </div>
+    <br />
+    TwicPics:
+    <div class="demo twic">
+      <twic-img src="components/greece.jpg" focus="48px100p"></twic-img>
+    </div>
     <script type="module" src="../dist/src/img-frameright.js"></script>
+    <script type="module">
+      import {
+        installTwicPics,
+        TwicImg,
+        // eslint-disable-next-line import/no-relative-packages
+      } from '../node_modules/@twicpics/components/webcomponents/module.mjs';
+
+      installTwicPics({
+        domain: `https://demo.twic.pics`,
+        anticipation: 0.5,
+        step: 100,
+      });
+
+      customElements.define(`twic-img`, TwicImg);
+    </script>
   </body>
 </html>

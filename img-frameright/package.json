@@ -25,7 +25,8 @@
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\""
   },
   "dependencies": {
-    "lit": "^2.0.2"
+    "lit": "^2.0.2",
+    "@twicpics/components": "^0.14.0"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",
